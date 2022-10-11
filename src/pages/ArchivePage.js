@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSearchParams } from 'react-router-dom';
 import NoteList from '../components/NoteList';
 import SearchBar from '../components/SearchBar';
@@ -51,6 +52,11 @@ class ArchivePage extends React.Component {
             </section>
         )
     }
+}
+
+ArchivePage.propTypes = {
+    notes: PropTypes.arrayOf(PropTypes.object).isRequired,
+    keyword: PropTypes.string,
 }
 
 export default ArchivePageWrapper;

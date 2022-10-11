@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSearchParams } from 'react-router-dom';
 import NoteList from '../components/NoteList';
 import SearchBar from '../components/SearchBar';
@@ -53,6 +54,11 @@ class HomePage extends React.Component {
             </section>
         )
     }
+}
+
+HomePage.propTypes = {
+    notes: PropTypes.arrayOf(PropTypes.object),
+    keyword: PropTypes.string,
 }
 
 export default HomePageWrapper;

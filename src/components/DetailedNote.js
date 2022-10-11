@@ -1,10 +1,9 @@
 import React from "react";
-import { getNote } from "../utils/local-data";
+import PropTypes from "prop-types";
 import { showFormattedDate } from "../utils";
 
-function DetaildeNote({ id }) {
-    const { title,  createdAt, body } = getNote(id);
-
+function DetailedNote({ note }) {
+    const { title, createdAt, body } = note;
     return (
         <>
             <h3 className="detail-page__title">{title}</h3>
@@ -14,4 +13,8 @@ function DetaildeNote({ id }) {
     )
 }
 
-export default DetaildeNote;
+DetailedNote.propTypes = {
+    note: PropTypes.object.isRequired,
+}
+
+export default DetailedNote;

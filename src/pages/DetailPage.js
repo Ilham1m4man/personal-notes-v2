@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getNote, deleteNote, archiveNote, unarchiveNote } from '../utils/local-data';
 import DetailedNote from '../components/DetailedNote';
 import DeleteButton from '../components/buttons/DeleteButton';
@@ -37,13 +38,18 @@ function DetailPage() {
 
     return (
         <section className='detail-page'>
-            <DetailedNote id={id} />
+            <DetailedNote note={note} />
             <div className='detail-page__action'>
                 {actionArchive}
                 <DeleteButton id={id} onDelete={onDeleteNoteHandler} />
             </div>
         </section>
     )
+}
+
+DetailPage.propTypes = {
+    note: PropTypes.object,
+    id: PropTypes.string,
 }
 
 export default DetailPage;
