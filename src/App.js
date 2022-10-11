@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import ArchivePage from './pages/ArchivePage';
 import DetailPage from './pages/DetailPage';
 import Navigation from './components/Navigation';
+import PageNotFound404 from './pages/PageNotFound404';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       </header>
       <main>
         <Routes>
+          <Route path="*" element={<PageNotFound404 />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/create" element={<CreateNotePage />} />
           <Route path="/detail/:id" element={<DetailPage />} />
