@@ -55,7 +55,7 @@ class ArchivePage extends React.Component {
 }
 
 ArchivePage.propTypes = {
-    notes: PropTypes.arrayOf(PropTypes.object).isRequired,
+    notes: PropTypes.arrayOf(PropTypes.object),
     keyword: PropTypes.string,
 }
 
